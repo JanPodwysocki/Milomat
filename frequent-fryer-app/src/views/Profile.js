@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { FlatButton, RaisedButton, TextField, Drawer, MenuItem, AppBar } from "material-ui";
+import { Drawer, MenuItem, AppBar } from "material-ui";
 import { Link } from "react-router-dom";
 import '../index.css';
 import axios from "axios/index";
-import { blueGrey500, grey800 } from "material-ui/styles/colors";
+import { grey800 } from "material-ui/styles/colors";
 import bronze from '../pngFiles/bronze1.png'
 import silver from '../pngFiles/silver1.png'
 import golden from '../pngFiles/gold1.png'
@@ -45,7 +45,7 @@ class Profile extends Component {
                     this.state.imagePath = '../pngFiles/gold1.png'
                 }
                 console.log('imagepath: ' + this.state.imagePath);
-                this.setState({ updated: true })
+                this.setState({ updated: true });
                 console.log('state mile: ' + this.state.miles);
             })
             .catch((e) => {
@@ -94,6 +94,9 @@ class Profile extends Component {
                         </Link>
                         <Link to={'/travelers/' + this.state.mail + '/flights'}>
                             <MenuItem>Flights</MenuItem>
+                        </Link>
+                        <Link to={'/travelers/' + this.state.mail + '/author'}>
+                            <MenuItem>About Author</MenuItem>
                         </Link>
                         <Link to={'/login'}>
                             <MenuItem>Logout</MenuItem>

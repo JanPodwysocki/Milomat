@@ -6,6 +6,7 @@ import Flights from "../views/Flights";
 import Registration from '../views/Registration';
 import Profile from '../views/Profile';
 import PreHome from '../views/PreHome';
+import Author from "../views/Author";
 const Main = () => (
     <main>
         <Switch>
@@ -14,6 +15,7 @@ const Main = () => (
             <Route path='/travelers/:travelerId/flights' component={Flights} />
             <Route path='/registration' component={Registration} />
             <Route path='/travelers/:travelerId/profile' component={Profile} />
+            <Route path='/travelers/:travelerId/author' component={Author} />
         </Switch>
     </main>
 );

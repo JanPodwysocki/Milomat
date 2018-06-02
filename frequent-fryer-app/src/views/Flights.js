@@ -143,6 +143,9 @@ class Flights extends Component {
                             <Link to={window.location}>
                                 <MenuItem>Flights</MenuItem>
                             </Link>
+                            <Link to={'/travelers/' + this.state.mail + '/author'}>
+                                <MenuItem>About Author</MenuItem>
+                            </Link>
                             <Link to={'/login'}>
                                 <MenuItem>Logout</MenuItem>
                             </Link>
