@@ -1,15 +1,36 @@
 package com.sabre.academy.uj.ff.services.flights.domain;
 
 import lombok.Data;
+import org.hibernate.validator.constraints.Email;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Data
+@Entity
+@Table(name = "User")
 public class User{
 
+    @Column(name = "FirstName", length = 100, nullable = false)
     private String firstName;
+
+    @Column(name = "LastName", length = 100, nullable = false)
     private String lastName;
+
+    @Column(name = "Password", length = 100, nullable = false)
     private String password;
+
+    @Id
+    @Column(name = "Email", length = 100, nullable = false, unique = true)
+    @Email
     private String email;
+
+    @Column(name = "Miles", nullable = false)
     private double miles;
+
+    @Column(name = "Status", length = 100, nullable = false, unique = true)
     private String status;
 
     /**

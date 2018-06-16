@@ -3,29 +3,60 @@ package com.sabre.academy.uj.ff.services.flights.domain;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 @Data
+@Entity
+@Table(name = "User")
 @Accessors(chain = true)
 public class Flight {
 
+    @Column(name = "Surname", length = 100, nullable = false)
     private String surname;
+
+    @Column(name = "Name", length = 100, nullable = false)
     private String name;
+
+    @Column(name = "Mail", length = 100, nullable = false)
     private String mail;
+
+    @Column(name = "ClassType", length = 100, nullable = false)
     private String classType;
+
+    @Column(name = "TripType", length = 100, nullable = false)
     private String tripType;
+
+    @Column(name = "DepartureDate2", nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate departureDate2;
-    //
+
+    @Column(name = "DepartureAirportCode", length = 100, nullable = false)
     private String departureAirportCode;
+
+    @Column(name = "ArrivalAirportCode", length = 100, nullable = false)
     private String arrivalAirportCode;
+
+    @Column(name = "Carrier", length = 100, nullable = false)
     private String carrier;
+
+    @Column(name = "Number", length = 100, nullable = false)
     private String number;
+
+    @Column(name = "DepartureDate", nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate departureDate;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "FlightID")
+    private int id;
+
+
 
     public Flight() {}
 

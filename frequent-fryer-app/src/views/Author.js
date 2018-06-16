@@ -30,7 +30,7 @@
             var items = [];
             for (let i = 1; i < this.state.items; i++) {
                 const image = require("../resources/Photos/" + i + ".jpg");
-                items.push(<img src={image} key={i} height="800"></img>);
+                items.push(<img src={image} key={i} height="650"></img>);
             }
             return items;
         }
@@ -148,7 +148,7 @@
                             <div
                                 className="vc"
                                 ref="iScroll"
-                                style={{ height: "800px", overflow: "auto" }}
+                                style={{ height: "600px", overflow: "auto" }}
                             >
                                 <h2>My adventures: </h2>
                                 <div>
